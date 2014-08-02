@@ -29,3 +29,5 @@ SOFTWARE.
 
 __author__ = 'Abhinav Kumar'
 __version__ = '0.0.1'
+
+from .camouflage import Camouflage
