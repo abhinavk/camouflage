@@ -54,11 +54,11 @@ def main():
 
     argparser = argparse.ArgumentParser(description='Camouflage')
     argparser.set_defaults(opt=True,config='camouflage.json')
-    argparser.add_argument('target', action='store', help='Specify the config file. (Default is ./camouflage.json)')
+    argparser.add_argument('target', action='store', help='Specify the target file')
     group = argparser.add_mutually_exclusive_group(required=False)
     group.add_argument('-s', '--hide', action='store_true', dest='opt', help='Hide stuff')
     group.add_argument('-u', '--unhide', action='store_false', dest='opt', help='Unhide stuff')
-    argparser.add_argument('-c', '--config', action='store', dest='config', help='Specify the config file. (Default is ./camouflage.json)')
+    argparser.add_argument('-c', '--config', action='store', dest='config', help='Specify the config file (Default is ./camouflage.json)')
     args = argparser.parse_args()
 
     camouflage = Camouflage(args.opt, args.target, args.config)
